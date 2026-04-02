@@ -1,202 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BIG QUAMS MEDIA® | Simplifying Campus Life</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NIN & JAMB Services</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<style>
-:root {
-  --accent-blue: #1e40af;
-  --accent-orange: #f97316;
-  --accent-green: #16a34a;
-  --muted: #64748b;
-  --bg: #ffffff;
-  --card: #ffffff;
-  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-}
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f6fa;
+      color: #222;
+    }
 
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: #0f172a; line-height: 1.5; scroll-behavior: smooth; }
+    header {
+      background: #1a1a2e;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-/* Header & Nav */
-header { background: var(--accent-blue); color: white; padding: 16px 24px; text-align: center; }
-.header-container { display: grid; grid-template-columns: 1fr; gap: 12px; text-align: center; padding: 16px; }
+    header h1 { font-size: 18px; font-weight: 600; }
 
-.logo-circle { width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 3px solid var(--accent-orange); margin: 0 auto; }
-.logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
 
-.brand-text { font-weight: bold; font-size: 1.8rem; letter-spacing: 1px; }
-.brand-subtext { font-size: 0.85rem; color: #dbeafe; }
+    nav a:hover { color: white; }
 
-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-nav a { color: white; text-decoration: none; font-weight: 600; transition: color 0.3s; }
-nav a:hover { color: var(--accent-orange); }
+    .hero {
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: white;
+      text-align: center;
+      padding: 60px 24px;
+    }
 
-/* Hero */
-.hero { text-align: center; background: #f0f5ff; padding: 60px 24px; border-radius: 12px; margin-bottom: 40px; }
-.hero h1 { font-size: 2.4rem; color: var(--accent-blue); margin-bottom: 12px; }
-.hero p { color: #64748b; font-size: 1.1rem; max-width: 650px; margin: 0 auto 24px; }
+    .hero h2 { font-size: 28px; margin-bottom: 12px; }
+    .hero p { font-size: 15px; color: #aaa; margin-bottom: 28px; }
 
-/* Buttons */
-.btn { background: var(--accent-orange); color: white; padding: 10px 16px; border-radius: 8px; font-weight: 700; text-decoration: none; display: inline-block; transition: 0.3s; border: none; cursor: pointer; }
-.btn:hover { background: #dc6803; }
-.cta-whatsapp { background: #25d366; }
-.cta-whatsapp:hover { background: #128c4a; }
+    .btn {
+      display: inline-block;
+      background: #e94560;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 6px;
+      cursor: pointer;
+      border: none;
+    }
 
-/* Sections */
-.container { max-width: 1000px; margin: 0 auto; padding: 24px; }
-h2 { color: var(--accent-blue); font-size: 1.8rem; margin-bottom: 14px; border-bottom: 3px solid var(--accent-orange); display: inline-block; padding-bottom: 6px; }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
 
-/* News Grid */
-.news-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 25px; }
-@media (min-width: 700px) { .news-grid { grid-template-columns: 1fr 1fr; } }
-.news-card { background: var(--card); border: 1px solid #cbd5e1; border-radius: 12px; padding: 16px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
-.news-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+    .services {
+      padding: 40px 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-.news-card h3 { margin: 8px 0; color: var(--accent-blue); font-size: 1.1rem; line-height: 1.3; }
-.news-card p { margin: 0 0 16px; color: #475569; font-size: 0.95rem; flex-grow: 1; }
+    .services h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #1a1a2e;
+    }
 
-.news-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; font-weight: 600; margin-bottom: 4px; }
-.category-label { background: #dbeafe; color: var(--accent-blue); padding: 2px 8px; border-radius: 4px; text-transform: uppercase; }
-.date-label { color: var(--muted); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
 
-.news-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
-.news-actions a.btn, .news-actions button.share-btn-full { flex: 1; text-align: center; padding: 10px 12px; border-radius: 8px; font-weight: 700; font-size: 0.95rem; transition: 0.3s; cursor: pointer; text-decoration: none; }
-.news-actions a.btn { background: var(--accent-orange); color: white; border: none; }
-.news-actions button.share-btn-full { background: var(--accent-blue); color: white; border: none; }
+    .service-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      text-align: center;
+    }
 
-/* Toast */
-#toast-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; }
-.toast { background: var(--accent-blue); color: white; padding: 12px 18px; border-radius: 8px; margin-top: 8px; min-width: 200px; font-weight: 600; box-shadow: 0 2px 6px rgba(0,0,0,0.2); opacity: 0; transform: translateY(20px); transition: 0.4s ease; }
-.toast.show { opacity: 1; transform: translateY(0); }
+    .service-card .icon { font-size: 32px; margin-bottom: 10px; }
+    .service-card h4 { font-size: 15px; margin-bottom: 6px; color: #1a1a2e; }
+    .service-card p { font-size: 12px; color: #666; margin-bottom: 12px; }
+    .service-card .price {
+      font-size: 16px;
+      font-weight: 700;
+      color: #e94560;
+      margin-bottom: 12px;
+    }
 
-.testimonial { background: #f1f5f9; padding: 20px; margin: 16px 0; border-left: 5px solid var(--accent-orange); border-radius: 8px; font-style: italic; color: #475569; max-width: 800px; }
-.testimonial strong { display: block; margin-bottom: 6px; color: var(--accent-blue); font-style: normal; }
+    .service-card .btn {
+      padding: 8px 18px;
+      font-size: 13px;
+      border-radius: 6px;
+    }
 
-footer { text-align: center; padding: 24px 16px; font-size: 0.9rem; color: var(--muted); border-top: 3px solid var(--accent-green); }
-#whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; background-color: #25d366; color: white; border-radius: 50%; text-align: center; font-size: 30px; display: flex; align-items: center; justify-content: center; z-index: 1000; text-decoration: none; }
-
-.contact-buttons a { display: block; margin-bottom: 10px; padding: 12px; border-radius: 8px; text-decoration: none; color: white; font-weight: bold; text-align: center; }
-.whatsapp-btn { background: #25d366; }
-.email-btn { background: var(--accent-blue); }
-.group-btn { background: var(--accent-orange); }
-.portfolio-btn { background: #333; }
-</style>
+    footer {
+      background: #1a1a2e;
+      color: #aaa;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-  <div class="header-container">
-    <div class="logo-circle"><img src="https://i.imgur.com/lYJXUyY.jpeg" alt="Logo"></div>
-    <div class="brand-text">BIG QUAMS MEDIA®</div>
-    <div class="brand-subtext">Simplifying Campus Life</div>
+  <header>
+    <h1>NIN & JAMB Services</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#news-updates">News</a>
-      <a href="#contact" class="btn">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
     </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Fast & Reliable NIN and JAMB Services</h2>
+    <p>NIN retrieval, modification, JAMB CAPS, and more — processed quickly and securely.</p>
+    <a href="register.html" class="btn">Get Started</a>
+    <a href="login.html" class="btn btn-outline">Login</a>
   </div>
-</header>
 
-<section class="hero" id="home">
-  <h1>Welcome to Big Quams Media</h1>
-  <p>Your trusted multidisciplinary media platform for campus, tech, and education.</p>
-  <a href="https://wa.me/message/OVCVEDHU3I2PH1" class="btn cta-whatsapp">💬 Chat on WhatsApp</a>
-</section>
+  <div class="services">
+    <h3>Our Services</h3>
+    <div class="service-grid">
 
-<section class="container" id="about">
-  <h2>About Us</h2>
-  <p>Big Quams Media® is a trusted academic support platform committed to guiding students through their educational journey.</p>
-</section>
+      <div class="service-card">
+        <div class="icon">🪪</div>
+        <h4>NIN Retrieval</h4>
+        <p>Retrieve your lost or forgotten NIN quickly.</p>
+        <div class="price">₦1,500</div>
+        <a href="register.html" class="btn">Request</a>
+      </div>
 
-<section class="container" id="services">
-  <h2>Our Services</h2>
-  <ul>
-    <li>JAMB & UTME Advisory</li>
-    <li>Admission Support</li>
-    <li>Scholarship & News Alerts</li>
-  </ul>
-</section>
+      <div class="service-card">
+        <div class="icon">✏️</div>
+        <h4>NIN Modification</h4>
+        <p>Correct your name, DOB or other NIN details.</p>
+        <div class="price">₦3,000</div>
+        <a href="register.html" class="btn">Request</a>
+      </div>
 
-<section class="container" id="news-updates">
-  <h2>News Updates</h2>
-  <div id="news-container" class="news-grid">
-    <p>Loading latest news…</p>
+      <div class="service-card">
+        <div class="icon">🖨️</div>
+        <h4>NIN Slip Printing</h4>
+        <p>Get your official NIN slip printed and delivered.</p>
+        <div class="price">₦1,000</div>
+        <a href="register.html" class="btn">Request</a>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">📱</div>
+        <h4>NIN-SIM Linkage</h4>
+        <p>Link your NIN to your phone number easily.</p>
+        <div class="price">₦500</div>
+        <a href="register.html" class="btn">Request</a>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🎓</div>
+        <h4>JAMB CAPS Acceptance</h4>
+        <p>Accept your admission offer on JAMB CAPS.</p>
+        <div class="price">₦2,000</div>
+        <a href="register.html" class="btn">Request</a>
+      </div>
+
+      <div class="service-card">
+        <div class="icon">🔄</div>
+        <h4>Change of Course</h4>
+        <p>Change your JAMB course or institution.</p>
+        <div class="price">₦2,500</div>
+        <a href="register.html" class="btn">Request</a>
+      </div>
+
+    </div>
   </div>
-</section>
 
-<div id="toast-container"></div>
-
-<section class="container" id="contact">
-  <h2>Contact & Feedback</h2>
-  <div class="contact-buttons">
-    <a href="https://wa.me/message/OVCVEDHU3I2PH1" class="whatsapp-btn">💬 WhatsApp</a>
-    <a href="mailto:bigquamsmedia024@gmail.com" class="email-btn">📧 Email</a>
-  </div>
-</section>
-
-<footer>
-  &copy; 2026 Big Quams Media®. All rights reserved.
-</footer>
-
-<a href="https://wa.me/message/OVCVEDHU3I2PH1" id="whatsapp-float">💬</a>
-
-<script>
-// Fetch news without AOS triggers
-async function fetchNewsData() {
-  const container = document.getElementById('news-container');
-  try {
-    const response = await fetch('news.json?v=' + Date.now());
-    const newsData = await response.json();
-    container.innerHTML = '';
-
-    newsData.forEach(item => {
-      const card = document.createElement('div');
-      card.className = 'news-card';
-      const link = item.link || '#';
-
-      card.innerHTML = `
-        <div class="news-meta">
-          <span class="category-label">${item.category || 'News'}</span>
-          <span class="date-label">${item.date || ''}</span>
-        </div>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <div class="news-actions">
-          <a href="${link}" class="btn" target="_blank">Read More</a>
-          <button class="share-btn-full" onclick="copyLink('${link}')">🔗 Share</button>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  } catch (err) {
-    container.innerHTML = '<p>Latest news currently unavailable.</p>';
-  }
-}
-
-function copyLink(url) {
-  navigator.clipboard.writeText(url).then(() => {
-    showToast("Link copied!");
-  });
-}
-
-function showToast(msg) {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.innerText = msg;
-  document.getElementById('toast-container').appendChild(toast);
-  setTimeout(() => toast.classList.add('show'), 50);
-  setTimeout(() => {
-    toast.classList.remove('show');
-    setTimeout(() => toast.remove(), 500);
-  }, 2500);
-}
-
-fetchNewsData();
-</script>
+  <footer>
+    <p>&copy; 2025 NIN & JAMB Services. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
